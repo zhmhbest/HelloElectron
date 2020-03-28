@@ -1,4 +1,4 @@
 # Electron
 
-- [开发文档](https://www.electronjs.org/docs/api)
-
+- [Electron文档](https://www.electronjs.org/docs/api)
+- [Electron下载](https://npm.taobao.org/mirrors/electron/)
