@@ -5,6 +5,7 @@ A demo of electron.
 
 ## 相关资料
 
+- [Nodejs文档](http://nodejs.cn/api/)
 - [Electron文档](https://www.electronjs.org/docs/api)
 - [Electron下载](https://npm.taobao.org/mirrors/electron/)
 
@@ -46,4 +47,5 @@ npm run start
 
 ```bash
 npm run build--w64
+# npm run build--all
 ```
