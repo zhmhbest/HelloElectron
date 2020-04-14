@@ -1,22 +1,18 @@
 {
-  "name": "electron-quick-start",
+  "name": "TestElectron",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A demo of electron.",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "mkdir build & cd build & electron-packager .. --platform=win32 --arch=x64 --overwrite",
+    "build--all": "mkdir build & cd build & electron-packager .. --platform=all --arch=all --overwrite"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "electron": "^8.1.1"
+    "electron": "^8.2.2",
+    "electron-packager": "^14.2.1"
   }
 }
