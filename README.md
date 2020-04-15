@@ -1,6 +1,6 @@
 # HelloElectron
 
-## [Hello](./helo)
+## [Hello](./hello)
 
 A hello demo of electron.
 
