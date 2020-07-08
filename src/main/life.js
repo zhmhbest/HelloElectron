@@ -1,15 +1,8 @@
-const {app} = require('electron');
+const {app, shell} = require('electron');
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
 const child_process = require('child_process');
-
-// const PYTHON_HOME = path.resolve("D:/ProgramFiles/Programmer/Language/Python/Python36-ml/Scripts");
-const PYTHON_HOME = ""
-const PYTHON_VERSION = 'Python 3.6.8';
-const FLASK_VERSION = '1.0.4';
-const EXE_PYTHON = path.join(PYTHON_HOME, 'python.exe');
-const EXE_PIP = path.join(PYTHON_HOME, 'pip.exe');
 
 
 const SERVER_LOCAL = (() => {
@@ -24,6 +17,15 @@ console.log('Server location:', SERVER_LOCAL);
 const SERVER_INDEX = path.join(SERVER_LOCAL, 'index.py');
 const SERVER_CONFIG = JSON.parse(fs.readFileSync(path.join(SERVER_LOCAL, 'config.json')));
 
+
+const PYTHON_HOME = SERVER_CONFIG.python;
+console.log('PYTHON_HOME :', PYTHON_HOME);
+const PYTHON_VERSION = 'Python 3.6.8';
+const FLASK_VERSION = '1.0.4';
+const EXE_PYTHON = path.join(PYTHON_HOME, 'python.exe');
+const EXE_PIP = path.join(PYTHON_HOME, 'pip.exe');
+
+
 module.exports = {
     // App运行前准备
     preAppLoad() {
@@ -33,6 +35,7 @@ module.exports = {
             // console.log(stdout);
             if (PYTHON_VERSION !== stdout.trim()) {
                 console.log("Unexpet Python Version!");
+                shell.openExternal("https://www.python.org/downloads/release/python-368/");
                 app.quit();
             }
         });
@@ -40,13 +43,20 @@ module.exports = {
         // Check Flask Version
         child_process.execFile(EXE_PIP, ['show', 'flask'], (error, stdout, stderr) => {
             let checkout = false;
-            for (let line of stdout.split("\n")) {
-                // console.log(stdout);
-                if ('Version:' === line.substr(0, 8)) {
-                    checkout = (FLASK_VERSION === line.substr(8).trim());
-                    break;
+            if (null == error) {
+                // pip 已安装
+                for (let line of stdout.split("\n")) {
+                    // console.log(stdout);
+                    if ('Version:' === line.substr(0, 8)) {
+                        checkout = (FLASK_VERSION === line.substr(8).trim());
+                        break;
+                    }
                 }
+            } else {
+                console.log("pip.exe not found!");
+                app.quit();
             }
+            // 安装flask
             if (!checkout) {
                 console.log("Install Flask...");
                 child_process.execFile(
