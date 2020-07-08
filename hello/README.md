@@ -19,8 +19,14 @@ npm run build
 ## Source
 
 - src
-  - index.js
-  - life.js
   - assets
   - main
+    - lib
+    - local
+    - app.js
+    - life.js
   - render
+    - lib
+    - home
+    - ...other renders
+  - index.js
