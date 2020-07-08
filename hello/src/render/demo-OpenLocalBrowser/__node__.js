@@ -1,4 +1,4 @@
-const BrowserHelper = require('../../lib/BrowserHelper');
+const BrowserHelper = require('../lib/renderHelper');
 
 const tag_a = document.querySelector('a');
 tag_a.onclick = function (e) {

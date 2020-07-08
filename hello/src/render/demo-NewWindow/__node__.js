@@ -1,1 +1,1 @@
-const BrowserHelper = require('../../lib/BrowserHelper');
+const BrowserHelper = require('../lib/renderHelper');

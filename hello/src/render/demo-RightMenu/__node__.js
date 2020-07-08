@@ -1,6 +1,6 @@
-const BrowserHelper = require('../../lib/BrowserHelper');
+const BrowserHelper = require('../lib/renderHelper');
 
-BrowserHelper.setMenuRight([
+BrowserHelper.menu.setMenuRight([
     {
         label: 'A',
         submenu: [

@@ -10,7 +10,7 @@ const addButton = (() => {
 })();
 let btn = null;
 //
-const BrowserHelper = require('../../lib/BrowserHelper');
+const BrowserHelper = require('../lib/renderHelper');
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 

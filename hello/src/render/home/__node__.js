@@ -10,7 +10,7 @@ const addButton = (() => {
 })();
 let btn = null;
 //
-const BrowserHelper = require('../../lib/BrowserHelper');
+const BrowserHelper = require('../lib/renderHelper');
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 
@@ -18,7 +18,7 @@ const BrowserHelper = require('../../lib/BrowserHelper');
 btn = addButton();
 btn.innerText = "设置菜单"
 btn.onclick = function (e) {
-    BrowserHelper.setMenuBar([
+    BrowserHelper.menu.setMenuBar([
         {
             label: '标签名称',
             submenu: [
@@ -32,7 +32,7 @@ btn.onclick = function (e) {
 btn = addButton();
 btn.innerText = "取消菜单"
 btn.onclick = function (e) {
-    BrowserHelper.setMenuBar();
+    BrowserHelper.menu.setMenuBar();
 };
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 
@@ -40,7 +40,7 @@ btn.onclick = function (e) {
 btn = addButton();
 btn.innerText = "右键菜单"
 btn.onclick = function (e) {
-    BrowserHelper.loadWinow("demo-RightMenu");
+    BrowserHelper.loadWindow("demo-RightMenu");
 };
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 
@@ -48,7 +48,7 @@ btn.onclick = function (e) {
 btn = addButton();
 btn.innerText = "新窗体"
 btn.onclick = function (e) {
-    BrowserHelper.loadWinow("demo-NewWindow");
+    BrowserHelper.loadWindow("demo-NewWindow");
 };
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 
@@ -56,7 +56,7 @@ btn.onclick = function (e) {
 btn = addButton();
 btn.innerText = "通过本地浏览器打开链接"
 btn.onclick = function (e) {
-    BrowserHelper.loadWinow("demo-OpenLocalBrowser");
+    BrowserHelper.loadWindow("demo-OpenLocalBrowser");
 };
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 
@@ -64,7 +64,7 @@ btn.onclick = function (e) {
 btn = addButton();
 btn.innerText = "剪切板"
 btn.onclick = function (e) {
-    BrowserHelper.loadWinow("demo-Clipboard");
+    BrowserHelper.loadWindow("demo-Clipboard");
 };
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 
@@ -72,7 +72,7 @@ btn.onclick = function (e) {
 btn = addButton();
 btn.innerText = "对话框"
 btn.onclick = function (e) {
-    BrowserHelper.loadWinow("demo-Dialog");
+    BrowserHelper.loadWindow("demo-Dialog");
 };
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
 
@@ -80,7 +80,7 @@ btn.onclick = function (e) {
 btn = addButton();
 btn.innerText = "向父窗体传递信息"
 btn.onclick = function (e) {
-    BrowserHelper.postWindow("demo-PostMessage", 'message', (msg) => {
+    BrowserHelper.post.postWindow("demo-PostMessage", 'message', (msg) => {
         alert(msg.data);
     });
 };
