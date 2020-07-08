@@ -1,12 +1,41 @@
-# HelloElectron
 
-## [Hello](./hello)
+# hello
 
 A hello demo of electron.
 
-## Electron-Vue
+## Command
 
-- [相关文档](https://simulatedgreg.gitbooks.io/electron-vue/content/cn/)
+```batch
+REM 初始化
+Initialize.bat
+
+REM 运行
+npm run start
+
+REM 打包
+npm run build
+```
+
+## Source
+
+- src
+  - assets
+  - main
+    - lib
+    - local
+    - app.js
+    - life.js
+  - render
+    - lib
+    - home
+    - ...other renders
+  - index.js
+
+## 其它相关项目
+
+### [electron-vue](https://github.com/SimulatedGREG/electron-vue)
+
+- [github](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html)
 
 ```bash
 npm -g i yarn
