@@ -1,6 +1,6 @@
 module.exports = {
     options: {
-        height: 500,
-        width: 500,
+        height: 200,
+        width: 200,
     }
 };

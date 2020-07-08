@@ -1,8 +1,6 @@
+const BrowserHelper = require('../../lib/BrowserHelper');
 
-let {remote} = require('electron');
-let {Menu} = remote;
-
-let menu = Menu.buildFromTemplate([
+BrowserHelper.setMenuRight([
     {
         label: 'A',
         submenu: [
@@ -18,8 +16,3 @@ let menu = Menu.buildFromTemplate([
         ]
     }
 ]);
-
-window.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-    menu.popup();
-});

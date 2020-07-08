@@ -1,0 +1,1 @@
+const BrowserHelper = require('../../lib/BrowserHelper');

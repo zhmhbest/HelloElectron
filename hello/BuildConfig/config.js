@@ -1,6 +1,6 @@
 
 module.exports = {
-    main: "src/main.js",
+    main: "src/index.js",
     scripts: {
         start: "electron .",
         build: "electron-builder --win --x64",
@@ -17,7 +17,7 @@ module.exports = {
     
         // 不同平台输出方式
         win: {
-            icon: "src/logo.ico",
+            icon: "src/assets/logo.ico",
             target: ["nsis", "zip"],
         },
         // MSI安装文件详细配置

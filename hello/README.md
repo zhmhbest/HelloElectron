@@ -3,24 +3,24 @@
 
 A hello demo of electron.
 
-## Install
+## Command
 
-```bash
-npm config set ELECTRON_MIRROR https://npm.taobao.org/mirrors/electron/
-npm init -f
-npm -D i electron
-npm -D i electron-builder
-node AttachScripts.js
-```
+```batch
+REM 初始化
+Initialize.bat
 
-## Start
-
-```bash
+REM 运行
 npm run start
-```
 
-## Build
-
-```bash
+REM 打包
 npm run build
 ```
+
+## Source
+
+- src
+  - index.js
+  - life.js
+  - assets
+  - main
+  - render
