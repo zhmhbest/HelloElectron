@@ -85,3 +85,11 @@ btn.onclick = function (e) {
     });
 };
 // ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■
+
+
+btn = addButton();
+btn.innerText = "Flask"
+btn.onclick = function (e) {
+    BrowserHelper.loadWindow("demo-Flask");
+};
+// ■■■■■■■■ ■■■■■■■■ ■■■■■■■■ ■■■■■■■■

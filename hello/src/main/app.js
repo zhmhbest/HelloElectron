@@ -4,7 +4,6 @@ const lifeCyle = require('./life');
 const loadWindow = require('./lib/loadWindow');
 const showDialog = require('./lib/showDialog');
 
-
 // 屏蔽程序菜单
 // Menu.setApplicationMenu(null);
 
@@ -29,14 +28,16 @@ module.exports = () => {
     // 关闭所有窗口后退出
     app.on('window-all-closed', function () {
         if (process.platform !== 'darwin') {
-            lifeCyle.preAppQuit()
             app.quit();
         }
     });
+    app.on('quit', lifeCyle.preAppQuit);
 
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) {
             createWindow()
         }
     });
+
+    lifeCyle.bind();
 }
