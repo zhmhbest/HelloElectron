@@ -1,7 +1,7 @@
 module.exports = {
     options: {
-        height: 500,
-        width: 500,
+        height: 800,
+        width: 600,
     },
     bar: [
         {
