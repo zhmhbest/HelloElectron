@@ -1,3 +1,4 @@
+// https://www.electron.build/configuration/configuration#configuration
 
 module.exports = {
     main: "src/index.js",
@@ -12,14 +13,38 @@ module.exports = {
     
         // 输出文件夹
         directories: {
-            "output": "dist"
+            "output": "dist",
         },
-    
+
+        // store | normal | maximum
+        compression: 'store',
+
+        files: [
+            "src/**",
+        ],
+
+        // asar打包
+        asar: true,
+        asarUnpack: ["./src/main/local"],
+
+        // 非压缩区
+        // extraFiles      : /<here>
+        // extraResources  : /resources/<here>
+        // extraFiles: [
+        //     {
+        //         from: "./src/main/local",
+        //         to: "./server",
+        //     }
+        // ],
+
         // 不同平台输出方式
         win: {
             icon: "src/assets/logo.ico",
-            target: ["nsis", "zip"],
+            // target: ["nsis", "zip"],
+            target: ["zip"],
         },
+    
+        /*
         // MSI安装文件详细配置
         nsis: {
             oneClick: false,                                // 一键安装
@@ -33,7 +58,7 @@ module.exports = {
             //shortcutName: "xxxx",                         // 图标名称
             //include: "build/script/installer.nsh",        // 包含的自定义nsis脚本
         }
-        /*
+ 
         mac: {
             icon: "src/logo.ico",
             target: ["dmg", "7z"]

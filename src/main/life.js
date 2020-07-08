@@ -10,7 +10,17 @@ const PYTHON_VERSION = 'Python 3.6.8';
 const FLASK_VERSION = '1.0.4';
 const EXE_PYTHON = path.join(PYTHON_HOME, 'python.exe');
 const EXE_PIP = path.join(PYTHON_HOME, 'pip.exe');
-const SERVER_LOCAL = path.join(__dirname, 'local');
+
+
+const SERVER_LOCAL = (() => {
+    const dev = process.env['dev'];
+    if (1 == dev) {
+        return path.join(__dirname, 'local');
+    } else {
+        return path.join(process.resourcesPath, 'app.asar.unpacked', 'src/main/local');
+    }
+})();
+console.log('Server location:', SERVER_LOCAL);
 const SERVER_INDEX = path.join(SERVER_LOCAL, 'index.py');
 const SERVER_CONFIG = JSON.parse(fs.readFileSync(path.join(SERVER_LOCAL, 'config.json')));
 

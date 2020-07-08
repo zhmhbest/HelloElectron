@@ -1,5 +1,4 @@
-
-# hello
+# HelloElectron
 
 A hello demo of electron.
 
