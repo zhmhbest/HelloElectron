@@ -3,7 +3,7 @@ module.exports = {
         height: 800,
         width: 600,
     },
-    on: function(win) {
+    others: function(win) {
         win.on('focus', () => {
             alert('别动我！');
         });
