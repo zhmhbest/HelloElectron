@@ -55,6 +55,11 @@ module.exports = function(location, BrowserWindow) {
         win = null;
     });
 
+    // 打开时启动调试器（开发模式）
+    if (1 === parseInt(process.env['dev'])) {
+        win.webContents.openDevTools();
+    }
+
     // 其它自定义操作（事件和调试）
     if (undefined !== window_config.others) {
         window_config.others(win);

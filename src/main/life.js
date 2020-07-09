@@ -6,8 +6,7 @@ const child_process = require('child_process');
 
 
 const SERVER_LOCAL = (() => {
-    const dev = process.env['dev'];
-    if (1 == dev) {
+    if (1 === parseInt(process.env['dev'])) {
         return path.join(__dirname, 'local');
     } else {
         return path.join(process.resourcesPath, 'app.asar.unpacked', 'src/main/local');

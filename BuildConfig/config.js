@@ -10,7 +10,7 @@ module.exports = {
         // 项目信息
         productName: "Hello",
         appId: "com.example.hello",
-    
+
         // 输出文件夹
         directories: {
             "output": "dist",

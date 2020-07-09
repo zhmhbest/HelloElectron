@@ -5,6 +5,6 @@ module.exports = {
     },
     others: function(win) {
         // 打开时启动调试器
-        win.webContents.openDevTools();
+        // win.webContents.openDevTools();
     }
 };

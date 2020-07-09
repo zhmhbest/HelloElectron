@@ -4,8 +4,10 @@ const lifeCyle = require('./life');
 const loadWindow = require('./lib/loadWindow');
 const showDialog = require('./lib/showDialog');
 
-// 屏蔽程序菜单
-// Menu.setApplicationMenu(null);
+// 屏蔽程序菜单（生成模式）
+if (1 !== parseInt(process.env['dev'])) {
+    Menu.setApplicationMenu(null);
+}
 
 // ■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■ 
 
