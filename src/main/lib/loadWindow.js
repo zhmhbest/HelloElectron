@@ -66,9 +66,17 @@ module.exports = function(location, BrowserWindow) {
     }
 
     // 加载页面
-    win.loadFile(
-        path.join(workspace, 'index.html')
-    );
+    if (undefined === window_config.options.index) {
+        // 使用默认页面
+        win.loadFile(
+            path.join(workspace, 'index.html')
+        );
+    } else {
+        win.loadFile(
+            path.join(workspace, window_config.options.index)
+        );
+    }
+
 
     return win;
 }
